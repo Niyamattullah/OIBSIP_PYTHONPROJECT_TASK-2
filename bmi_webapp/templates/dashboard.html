@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+
+<div class="hero">
+  <h1>Welcome, {{ username }} — Track Your BMI Journey</h1>
+</div>
+
+<div class="ticker">
+  <p>🏃 Track your progress • Stay motivated • Small steps every day</p>
+</div>
+
+<div class="container card">
+  <h2>Calculate Your BMI</h2>
+  <form method="POST">
+    <label>Weight (kg)</label>
+    <input name="weight" step="any" required>
+    <label>Height (m)</label>
+    <input name="height" step="any" required>
+    <button type="submit">Compute BMI</button>
+  </form>
+
+  <p>
+    <a href="/history">🏥 View BMI History</a> • 
+    <a href="/logout">Logout</a>
+  </p>
+
+  <!-- 🌟 Add image gallery here -->
+  <div class="image-gallery">
+    <h3 style="text-align:center; margin-top: 20px;">Inspiration for a Healthier You</h3>
+    <div class="images-row">
+      <img src="{{ url_for('static', filename='images/bmi_image_1.png') }}" alt="BMI Health Tip">
+      <img src="{{ url_for('static', filename='images/bmi_image_2.png') }}" alt="BMI Chart">
+      <img src="{{ url_for('static', filename='images/bmi_image_3.png') }}" alt="Doctor Consultation">
+      <img src="{{ url_for('static', filename='images/bmi_image_4.png') }}" alt="Healthy Lifestyle">
+      <img src="{{ url_for('static', filename='images/bmi_image_5.png') }}" alt="Inspiration">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
